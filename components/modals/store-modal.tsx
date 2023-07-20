@@ -1,11 +1,12 @@
 "use client";
 
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
 
+import { Store } from "@/app/api/stores/route";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -41,8 +42,13 @@ const StoreModal = () => {
     try {
       setLoading(true);
 
-      await axios.post("/api/stores", values);
-      toast.success("Store created.");
+      const response: AxiosResponse<Store, any> = await axios.post(
+        "/api/stores",
+        values,
+      );
+      const storeId = response.data.id;
+
+      window.location.assign(`/${storeId}`);
     } catch {
       toast.error("Something went wrong.");
     } finally {
