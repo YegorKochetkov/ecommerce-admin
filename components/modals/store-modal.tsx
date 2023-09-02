@@ -1,10 +1,11 @@
 "use client";
 
-import axios, { AxiosResponse } from "axios";
 import React from "react";
+import axios, { AxiosResponse } from "axios";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Store } from "@/app/api/stores/route";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,6 @@ import {
 import { Input } from "@/components/ui/input";
 import Modal from "@/components/ui/modal";
 import useStoreModal from "@/hooks/use-store-modal";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const formSchema = z.object({
   name: z.string().min(1),
