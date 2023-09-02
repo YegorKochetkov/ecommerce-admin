@@ -22,7 +22,7 @@ const MainNav = ({
   ];
 
   return (
-    <ul
+    <menu
       className={cn("flex items-center space-x-4 lg:space-x-6", className)}
       {...props}
     >
@@ -40,7 +40,7 @@ const MainNav = ({
           {route.label}
         </Link>
       ))}
-    </ul>
+    </menu>
   );
 };
 
