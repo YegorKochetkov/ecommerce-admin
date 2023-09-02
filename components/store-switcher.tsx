@@ -54,6 +54,7 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
     setOpen(false);
     router.push(`/${store.id}`);
   };
+
   return (
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
@@ -64,16 +65,20 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
           aria-expanded={open}
           aria-label="Select a role"
           className={cn(
-            "w-[12rem] items-center justify-between whitespace-nowrap active:scale-100",
+            "w-52 items-center justify-between whitespace-nowrap active:scale-100",
             className,
           )}
         >
-          <StoreIcon className="mr-2 h-4 w-4" />
-          {currentStore?.label}
+          <span className="mr-2 [&>svg]:h-4 [&>svg]:w-4">
+            <StoreIcon />
+          </span>
+          <span className="overflow-hidden overflow-ellipsis">
+            {currentStore?.label}
+          </span>
           <ChevronsUpDown className="ml-auto h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[12rem] p-0">
+      <PopoverContent className=" p-0">
         <Command>
           <CommandList>
             <CommandInput placeholder="Search store..." />
@@ -85,16 +90,20 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
                   onSelect={() => onStoreSelect(store)}
                   className="text-sm"
                 >
-                  <StoreIcon className="mr-2 h-4 w-4" />
-                  {store.label}
-                  <Check
+                  <span className="mr-2 [&>svg]:h-4 [&>svg]:w-4">
+                    <StoreIcon />
+                  </span>
+                  <span className="w-fit">{store.label}</span>
+                  <span
                     className={cn(
-                      "ml-auto h-4 w-4",
+                      "ml-auto  [&>svg]:h-4 [&>svg]:w-4",
                       currentStore?.id === store.id
                         ? "opacity-100"
                         : "opacity-0",
                     )}
-                  />
+                  >
+                    <Check />
+                  </span>
                 </CommandItem>
               ))}
             </CommandGroup>
