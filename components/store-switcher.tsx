@@ -69,8 +69,8 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
             className,
           )}
         >
-          <span className="mr-2 [&>svg]:h-4 [&>svg]:w-4">
-            <StoreIcon />
+          <span className="mr-2">
+            <StoreIcon className="h-4 w-4" />
           </span>
           <span className="overflow-hidden overflow-ellipsis">
             {currentStore?.label}
@@ -90,19 +90,19 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
                   onSelect={() => onStoreSelect(store)}
                   className="text-sm"
                 >
-                  <span className="mr-2 [&>svg]:h-4 [&>svg]:w-4">
-                    <StoreIcon />
+                  <span className="mr-2">
+                    <StoreIcon className="h-4 w-4" />
                   </span>
                   <span className="w-fit">{store.label}</span>
                   <span
                     className={cn(
-                      "ml-auto  [&>svg]:h-4 [&>svg]:w-4",
+                      "ml-auto",
                       currentStore?.id === store.id
                         ? "opacity-100"
                         : "opacity-0",
                     )}
                   >
-                    <Check />
+                    <Check className="h-4 w-4" />
                   </span>
                 </CommandItem>
               ))}
