@@ -20,14 +20,12 @@ const Navbar = async () => {
   });
 
   return (
-    <header className="border-b">
-      <nav className="flex min-h-[4rem] flex-wrap items-center px-4">
+    <header className="flex items-center justify-between gap-x-4 border-b px-4 py-2">
+      <nav className="flex flex-wrap items-center justify-between gap-4">
         <StoreSwitcher items={stores} />
-        <MainNav className="mx-4 sm:mx-6" />
-        <div className="my-1 ml-auto flex items-center space-x-4">
-          <UserButton afterSignOutUrl="/" />
-        </div>
+        <MainNav className="py-2" />
       </nav>
+      <UserButton afterSignOutUrl="/" />
     </header>
   );
 };
