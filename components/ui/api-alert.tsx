@@ -30,14 +30,14 @@ export const ApiAlert = ({ title, description, variant }: ApiAlertProps) => {
   };
 
   return (
-    <Alert className="min-w-min">
+    <Alert className="min-w-min max-w-max">
       <Server className="w-4" />
       <AlertTitle className="flex items-center gap-x-2">
         {title}
         <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
       </AlertTitle>
-      <AlertDescription className="mt-4 flex items-center justify-between gap-x-2">
-        <code className="fon relative rounded bg-muted px-2 py-1 font-mono text-sm font-semibold">
+      <AlertDescription className="mt-4 flex items-center justify-between gap-x-1">
+        <code className="relative mr-4 break-words rounded bg-muted px-2 py-1 font-mono text-sm font-semibold">
           {description}
         </code>
         <Button size="icon" variant="outline" onClick={onCopy}>
