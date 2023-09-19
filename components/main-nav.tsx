@@ -24,11 +24,19 @@ const MainNav = ({
       label: "Settings",
       active: pathname === `/${params.storeId}/settings`,
     },
+    {
+      href: `/${params.storeId}/billboards`,
+      label: "Billboards",
+      active: pathname === `/${params.storeId}/billboards`,
+    },
   ];
 
   return (
     <menu
-      className={cn("flex items-center space-x-4 lg:space-x-6", className)}
+      className={cn(
+        "flex flex-wrap items-center gap-x-4 gap-y-3 lg:gap-x-6",
+        className,
+      )}
       {...props}
     >
       {routes.map((route) => (

@@ -1,11 +1,11 @@
 "use client";
 
-import { Store } from "@prisma/client";
+import React from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
+import { Store } from "@prisma/client";
 import { Trash } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
-import React from "react";
-import toast from "react-hot-toast";
 
 import { SettingsForm } from "./settings-form";
 import { AlertModal } from "@/components/modals/alert-modal";
