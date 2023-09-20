@@ -30,12 +30,16 @@ export const Billboard = ({
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/stores/${params.storeId}`);
+      await axios.delete(
+        `/api/${params.storeId}/billboards/${params.billboardId}`,
+      );
       router.refresh();
       router.push("/");
-      toast.success("Store deleted.");
+      toast.success("Billboard deleted.");
     } catch (error) {
-      toast.error("Make shure you removed all products and categories first.");
+      toast.error(
+        "Make shure you removed all categories using this billboard first.",
+      );
     } finally {
       setLoading(false);
       setOpen(false);
@@ -55,6 +59,7 @@ export const Billboard = ({
           <Heading title={title} description={description} />
           {initialData ? (
             <Button
+              type="button"
               variant="destructive"
               size="icon"
               disabled={loading}
