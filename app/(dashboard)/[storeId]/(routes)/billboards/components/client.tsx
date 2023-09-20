@@ -4,21 +4,21 @@ import React from "react";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useRouter } from "next/router";
 
+import { BillboardColumn, columns } from "./columns";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
+import { DataTable } from "@/components/ui/data-table";
 
-const BillboardClient = () => {
+const BillboardClient = ({ data }: { data: BillboardColumn[] }) => {
   const params = useParams();
-  // const router = useRouter();
 
   return (
     <React.Fragment>
       <div className="flex flex-wrap items-center justify-between gap-y-3">
         <Heading
-          title="Billboards (0)"
+          title={`Billboards (${data.length})`}
           description="Manage billboards for your store"
         />
 
@@ -30,6 +30,7 @@ const BillboardClient = () => {
         </Button>
       </div>
       <Separator />
+      <DataTable columns={columns} data={data} />
     </React.Fragment>
   );
 };
