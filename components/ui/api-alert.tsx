@@ -40,7 +40,7 @@ export const ApiAlert = ({ title, description, variant }: ApiAlertProps) => {
         <code className="relative break-words rounded bg-muted p-2 font-mono text-sm font-semibold">
           {description}
         </code>
-        <Button size="icon" variant="outline" onClick={onCopy}>
+        <Button type="button" size="icon" variant="outline" onClick={onCopy}>
           <Copy className="w-4" />
         </Button>
       </AlertDescription>

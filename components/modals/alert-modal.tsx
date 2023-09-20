@@ -34,10 +34,20 @@ export const AlertModal = ({
       onClose={onClose}
     >
       <div className="flex w-full items-center justify-end space-x-2 pt-6">
-        <Button disabled={loading} onClick={onClose} variant="outline">
+        <Button
+          type="button"
+          disabled={loading}
+          onClick={onClose}
+          variant="outline"
+        >
           Cancel
         </Button>
-        <Button disabled={loading} onClick={onConfirm} variant="destructive">
+        <Button
+          type="button"
+          disabled={loading}
+          onClick={onConfirm}
+          variant="destructive"
+        >
           Continue
         </Button>
       </div>

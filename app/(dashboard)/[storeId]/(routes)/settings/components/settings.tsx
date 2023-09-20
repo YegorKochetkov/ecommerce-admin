@@ -50,6 +50,7 @@ export const Settings = ({ initialData }: { initialData: Store }) => {
         <header className="flex items-center justify-between">
           <Heading title="Settings" description="Manage store preferences" />
           <Button
+            type="button"
             variant="destructive"
             size="icon"
             disabled={loading}
