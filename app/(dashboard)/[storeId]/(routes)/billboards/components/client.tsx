@@ -30,7 +30,7 @@ const BillboardClient = ({ data }: { data: BillboardColumn[] }) => {
         </Button>
       </div>
       <Separator />
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={columns} data={data} searchKey="label" />
     </React.Fragment>
   );
 };
