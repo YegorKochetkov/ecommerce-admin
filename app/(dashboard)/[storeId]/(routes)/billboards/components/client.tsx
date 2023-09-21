@@ -5,9 +5,10 @@ import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
+import Heading from "@/components/ui/heading";
+import ApiList from "@/components/ui/api-list";
 import { BillboardColumn, columns } from "./columns";
 import { Button } from "@/components/ui/button";
-import Heading from "@/components/ui/heading";
 import { Separator } from "@/components/ui/separator";
 import { DataTable } from "@/components/ui/data-table";
 
@@ -31,6 +32,11 @@ const BillboardClient = ({ data }: { data: BillboardColumn[] }) => {
       </div>
       <Separator />
       <DataTable columns={columns} data={data} searchKey="label" />
+      <section>
+        <Heading title="API" description="API calls for Billboards" />
+        <Separator className="my-2" />
+        <ApiList entityName="billboards" entityIdName="billboardId" />
+      </section>
     </React.Fragment>
   );
 };
