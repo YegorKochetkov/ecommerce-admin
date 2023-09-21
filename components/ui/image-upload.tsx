@@ -35,7 +35,7 @@ const ImageUpload = ({
   }
 
   return (
-    <div className="flex flex-wrap items-center">
+    <div className="flex flex-col items-start">
       <div className="mb-4 flex items-center gap-4">
         {urls.map((url) => (
           <div
