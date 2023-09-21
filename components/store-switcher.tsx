@@ -65,7 +65,7 @@ const StoreSwitcher = ({ className, items = [] }: StoreSwitcherProps) => {
           aria-expanded={open}
           aria-label="Select a role"
           className={cn(
-            "w-52 items-center justify-between whitespace-nowrap active:scale-100",
+            "w-52 min-w-0 items-center justify-between whitespace-nowrap active:scale-100",
             className,
           )}
         >
