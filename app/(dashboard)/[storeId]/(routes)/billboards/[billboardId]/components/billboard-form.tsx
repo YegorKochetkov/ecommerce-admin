@@ -23,7 +23,7 @@ import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
   label: z.string().min(1),
-  imageUrl: z.string().min(1),
+  imageUrl: z.string().min(2, "Please upload an image"),
 });
 
 type BillboardFormValues = z.infer<typeof formSchema>;
