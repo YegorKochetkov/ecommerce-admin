@@ -30,7 +30,7 @@ export const ApiAlert = ({ title, description, variant }: ApiAlertProps) => {
   };
 
   return (
-    <Alert className="min-w-min max-w-max">
+    <Alert className="min-w-min">
       <Server className="w-4" />
       <AlertTitle className="flex flex-wrap items-center gap-2">
         {title}

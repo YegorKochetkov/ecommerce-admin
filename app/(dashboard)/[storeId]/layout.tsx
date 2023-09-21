@@ -32,7 +32,9 @@ export default async function DashboardLayout({
   return (
     <React.Fragment>
       <Navbar />
-      <main className="flex-1 space-y-4 p-4 pt-6 sm:p-8">{children}</main>
+      <main className="container flex-1 space-y-4 p-4 pt-6 sm:p-8">
+        {children}
+      </main>
     </React.Fragment>
   );
 }
