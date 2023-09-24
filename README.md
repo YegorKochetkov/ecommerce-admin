@@ -7,11 +7,6 @@ This application consists of two parts:
 
 ## Demo for admin panel
 
-- Login: test
-- Password: test
-
----
-
 ### [Open admin panel]()
 
 ### [Open store]()
