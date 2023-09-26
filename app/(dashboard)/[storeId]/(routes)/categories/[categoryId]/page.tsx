@@ -20,13 +20,7 @@ const CategoryPage = async ({
     },
   });
 
-  return (
-    // <div className="flex flex-1">
-    //   <div className="flex-1 gap-y-4 p-8 pt-6">
-    <Category billboards={billboards} initialData={category} />
-    //   </div>
-    // </div>
-  );
+  return <Category billboards={billboards} initialData={category} />;
 };
 
 export default CategoryPage;

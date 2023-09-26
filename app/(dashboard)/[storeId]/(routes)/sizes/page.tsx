@@ -22,13 +22,7 @@ const SizesPage = async ({ params }: { params: { storeId: string } }) => {
     createdAt: format(new Date(size.createdAt), "MMMM do, yyyy"),
   }));
 
-  return (
-    // <div className="flex flex-col">
-    //   <div className="flex-1 space-y-4">
-    <SizeClient data={formattedSizes} />
-    //   </div>
-    // </div>
-  );
+  return <SizeClient data={formattedSizes} />;
 };
 
 export default SizesPage;

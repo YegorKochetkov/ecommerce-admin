@@ -8,13 +8,7 @@ const SizePage = async ({ params }: { params: { sizeId: string } }) => {
     where: { id: params.sizeId },
   });
 
-  return (
-    // <div className="flex flex-1">
-    //   <div className="flex-1 gap-y-4 p-8 pt-6">
-    <Size initialData={size} />
-    //   </div>
-    // </div>
-  );
+  return <Size initialData={size} />;
 };
 
 export default SizePage;

@@ -37,7 +37,7 @@ export const ApiAlert = ({ title, description, variant }: ApiAlertProps) => {
         <Badge variant={variantMap[variant]}>{textMap[variant]}</Badge>
       </AlertTitle>
       <AlertDescription className="mt-4 flex flex-col items-end justify-between gap-4 sm:flex-row sm:items-center">
-        <code className="relative break-words rounded bg-muted p-2 font-mono text-sm font-semibold">
+        <code className="relative break-all rounded bg-muted p-2 font-mono text-sm font-semibold">
           {description}
         </code>
         <Button type="button" size="icon" variant="outline" onClick={onCopy}>

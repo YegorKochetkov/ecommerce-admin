@@ -12,13 +12,7 @@ const BillboardPage = async ({
     where: { id: params.billboardId },
   });
 
-  return (
-    // <div className="flex flex-1">
-    //   <div className="flex-1 gap-y-4 p-8 pt-6">
-    <Billboard initialData={billboard} />
-    //   </div>
-    // </div>
-  );
+  return <Billboard initialData={billboard} />;
 };
 
 export default BillboardPage;

@@ -22,13 +22,7 @@ const ColorsPage = async ({ params }: { params: { storeId: string } }) => {
     createdAt: format(new Date(color.createdAt), "MMMM do, yyyy"),
   }));
 
-  return (
-    // <div className="flex flex-col">
-    //   <div className="flex-1 space-y-4">
-    <ColorClient data={formattedColors} />
-    //   </div>
-    // </div>
-  );
+  return <ColorClient data={formattedColors} />;
 };
 
 export default ColorsPage;

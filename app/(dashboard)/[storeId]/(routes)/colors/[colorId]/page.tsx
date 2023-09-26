@@ -8,13 +8,7 @@ const ColorPage = async ({ params }: { params: { colorId: string } }) => {
     where: { id: params.colorId },
   });
 
-  return (
-    // <div className="flex flex-1">
-    //   <div className="flex-1 gap-y-4 p-8 pt-6">
-    <Color initialData={color} />
-    //   </div>
-    // </div>
-  );
+  return <Color initialData={color} />;
 };
 
 export default ColorPage;

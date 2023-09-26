@@ -67,7 +67,7 @@ export const SizeForm = ({ initialData }: { initialData: Size | null }) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-8">
-        <div className="flex flex-wrap items-end gap-x-6 gap-y-4">
+        <div className="flex flex-wrap gap-x-6 gap-y-4">
           <FormField
             control={form.control}
             name="name"

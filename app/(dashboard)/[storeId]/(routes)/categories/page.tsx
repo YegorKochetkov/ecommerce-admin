@@ -25,13 +25,7 @@ const CategoriesPage = async ({ params }: { params: { storeId: string } }) => {
     createdAt: format(new Date(category.createdAt), "MMMM do, yyyy"),
   }));
 
-  return (
-    // <div className="flex flex-col">
-    //   <div className="flex-1 space-y-4">
-    <CategoryClient data={formattedCategories} />
-    //   </div>
-    // </div>
-  );
+  return <CategoryClient data={formattedCategories} />;
 };
 
 export default CategoriesPage;
