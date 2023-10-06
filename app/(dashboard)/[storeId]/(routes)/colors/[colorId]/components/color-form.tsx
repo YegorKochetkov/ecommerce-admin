@@ -105,7 +105,7 @@ export const ColorForm = ({ initialData }: { initialData: Color | null }) => {
                       className="min-w-min"
                     />
                     <div
-                      className="rounded-full border p-3"
+                      className="h-8 w-8 rounded-full border"
                       style={{ backgroundColor: field.value }}
                     />
                   </div>

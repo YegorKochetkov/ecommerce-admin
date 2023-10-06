@@ -17,7 +17,7 @@ const ImageUpload = ({
 }: {
   disabled?: boolean;
   onChange: (url: string) => void;
-  onRemove: () => void;
+  onRemove: (url: string) => void;
   urls: string[];
 }) => {
   const [mounted, setMounted] = React.useState(false);
@@ -47,7 +47,7 @@ const ImageUpload = ({
                 type="button"
                 size="icon"
                 variant="destructive"
-                onClick={onRemove}
+                onClick={() => onRemove(url)}
               >
                 <Trash className="w-4" />
               </Button>
