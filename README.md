@@ -2,10 +2,10 @@
 
 This application consists of two parts:
 
-- admin panel
+- this admin panel
 - [store]()
 
-## Demo for admin panel
+## Demo
 
 ### [Open admin panel]()
 
