@@ -17,6 +17,7 @@ export async function POST(
     const body = await req.json();
     const {
       name,
+      description,
       price,
       categoryId,
       colorId,
@@ -28,6 +29,10 @@ export async function POST(
 
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
+    }
+
+    if (!description) {
+      return new NextResponse("Description is required", { status: 400 });
     }
 
     if (!price) {
@@ -65,6 +70,7 @@ export async function POST(
     const product = await prismadb.product.create({
       data: {
         name,
+        description,
         price,
         categoryId,
         colorId,
@@ -93,9 +99,9 @@ export async function GET(
 ) {
   try {
     const { searchParams } = new URL(req.url);
-    const categoryId = searchParams.get("categoryId") || undefined;
-    const colorId = searchParams.get("colorId") || undefined;
-    const sizeId = searchParams.get("sizeId") || undefined;
+    const categories = searchParams.getAll("categoryId");
+    const colors = searchParams.getAll("colorId") || undefined;
+    const sizes = searchParams.getAll("sizeId") || undefined;
     const isFeatured = searchParams.get("isFeatured");
 
     if (!params.storeId) {
@@ -105,9 +111,9 @@ export async function GET(
     const products = await prismadb.product.findMany({
       where: {
         storeId: params.storeId,
-        categoryId,
-        colorId,
-        sizeId,
+        categoryId: categories.length > 0 ? { in: categories } : undefined,
+        colorId: colors.length > 0 ? { in: colors } : undefined,
+        sizeId: sizes.length > 0 ? { in: sizes } : undefined,
         isFeatured: isFeatured ? true : undefined,
         isArchived: false,
       },

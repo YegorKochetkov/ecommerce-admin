@@ -29,9 +29,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Textarea } from "@/components/ui/textarea";
 
 const formSchema = z.object({
   name: z.string().min(1),
+  description: z.string().min(1),
   images: z
     .object({
       url: z.string().url(),
@@ -73,6 +75,7 @@ export const ProductForm = ({
       ? { ...initialData, price: parseFloat(String(initialData.price)) }
       : {
           name: "",
+          description: "",
           images: [],
           price: 0,
           categoryId: "",
@@ -245,6 +248,29 @@ export const ProductForm = ({
                     ))}
                   </SelectContent>
                 </Select>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div>
+          <FormField
+            control={form.control}
+            name="description"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Description</FormLabel>
+                <FormControl>
+                  <Textarea
+                    placeholder={
+                      "Enter product description here. " +
+                      "Set '\\n' for paragraphs separation."
+                    }
+                    disabled={loading}
+                    {...field}
+                    title={field.name}
+                  />
+                </FormControl>
                 <FormMessage />
               </FormItem>
             )}

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
+import { Product } from "@prisma/client";
 
 export async function GET(
   _req: Request,
@@ -43,6 +44,7 @@ export async function PATCH(
     const body = await req.json();
     const {
       name,
+      description,
       price,
       categoryId,
       colorId,
@@ -51,6 +53,10 @@ export async function PATCH(
       isFeatured,
       isArchived,
     } = body;
+
+    if (!description) {
+      return new NextResponse("Description is required", { status: 400 });
+    }
 
     if (!name) {
       return new NextResponse("Name is required", { status: 400 });
@@ -92,6 +98,7 @@ export async function PATCH(
       where: { id: params.productId },
       data: {
         name,
+        description,
         price,
         categoryId,
         colorId,
