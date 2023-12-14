@@ -20,8 +20,8 @@ import { AlertModal } from "@/components/modals/alert-modal";
 const CellActions = ({ data }: { data: ProductColumn }) => {
   const router = useRouter();
   const params = useParams();
-  const [loading, setLoading] = React.useState(false);
-  const [open, setOpen] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const onCopy = (id: string) => {
     navigator.clipboard.writeText(id);
@@ -30,25 +30,25 @@ const CellActions = ({ data }: { data: ProductColumn }) => {
 
   const onDelete = async () => {
     try {
-      setLoading(true);
+      setIsLoading(true);
       await axios.delete(`/api/${params.storeId}/products/${data.id}`);
       router.refresh();
       toast.success("Product deleted.");
     } catch (error) {
       toast.error("Something went wrong.");
     } finally {
-      setLoading(false);
-      setOpen(false);
+      setIsLoading(false);
+      setIsOpen(false);
     }
   };
 
   return (
     <React.Fragment>
       <AlertModal
-        isOpen={open}
-        onClose={() => setOpen(false)}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
         onConfirm={onDelete}
-        loading={loading}
+        loading={isLoading}
       />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -71,7 +71,7 @@ const CellActions = ({ data }: { data: ProductColumn }) => {
             <Edit className="mr-2 w-4" />
             Update
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={() => setOpen(true)}>
+          <DropdownMenuItem onClick={() => setIsOpen(true)}>
             <Trash className="mr-2 w-4" />
             Delete
           </DropdownMenuItem>
