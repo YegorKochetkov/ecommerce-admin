@@ -262,10 +262,7 @@ export const ProductForm = ({
                 <FormLabel>Description</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder={
-                      "Enter product description here. " +
-                      "Set '\\n' for paragraphs separation."
-                    }
+                    placeholder={"Enter product description here."}
                     disabled={loading}
                     {...field}
                     title={field.name}
