@@ -1,9 +1,9 @@
 # Ecommerce-admin dashboard
 
-This application consists of two parts:
+Application consists of two parts:
 
 - this admin panel
-- [store]()
+- [store](https://github.com/YegorKochetkov/ecommerce-store)
 
 ## Demo
 
@@ -16,10 +16,11 @@ This application consists of two parts:
 - NextJS
 - MySQL
 - Prisma
-- shadcn ui
+- shadcn-ui
 - Tailwindcss
 - TypeScript
 - Clerk
 - Zustand
 - Cloudinary
 - PlanetScale
+- Stripe
