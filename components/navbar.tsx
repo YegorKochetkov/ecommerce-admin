@@ -2,9 +2,11 @@ import React from "react";
 import { redirect } from "next/navigation";
 import { auth, UserButton } from "@clerk/nextjs";
 
+import prismadb from "@/lib/prismadb";
+
 import MainNav from "@/components/main-nav";
 import StoreSwitcher from "@/components/store-switcher";
-import prismadb from "@/lib/prismadb";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const Navbar = async () => {
   const { userId } = auth();
@@ -26,7 +28,8 @@ const Navbar = async () => {
           <StoreSwitcher items={stores} />
           <MainNav className="py-2" />
         </nav>
-        <span className="self-start sm:self-auto">
+        <span className="flex flex-row items-center gap-3 self-start sm:self-auto">
+          <ThemeToggle />
           <UserButton afterSignOutUrl="/" />
         </span>
       </div>
