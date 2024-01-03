@@ -7,9 +7,11 @@ Application consists of two parts:
 
 ## Demo
 
-### [Open admin panel]()
+### [Open admin panel](https://ecommerce-admin-beryl-five.vercel.app/3339fd7e-a8f6-42e4-bbbc-73bb7f18d46b)
 
-### [Open store]()
+### [Open store](https://ecommerce-store-silk-seven.vercel.app/)
+
+### [Watch the video](https://youtu.be/icnjmznJg8E)
 
 ## Stack
 
